@@ -1,12 +1,15 @@
+version: 0.2
+
 phases:
   install:
     runtime-versions:
       java: corretto11
   build:
     commands:
-      - cd /codebuild/output/src4080305061/src  # Gradle 빌드 파일이 있는 디렉토리로 이동
-      - gradle build  # Gradle 빌드 실행
+      - echo "Building the application with Gradle..."
+      - gradle build # Gradle 빌드를 실행합니다.
+
 artifacts:
   files:
-    - build/libs/*.jar  # 빌드 결과물을 아티팩트로 지정
+    - build/libs/*.jar # 빌드된 JAR 파일을 아티팩트로 설정
 
